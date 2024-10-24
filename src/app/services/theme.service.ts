@@ -5,13 +5,15 @@ import { Theme } from '../enums/theme.enum';
   providedIn: 'root'
 })
 export class ThemeService {
-  private theme: Theme = Theme.Dark; 
+  private theme: Theme = Theme.System; 
   private readonly THEME_KEY='selected-theme';
 
   constructor() {
     const storedTheme = localStorage.getItem(this.THEME_KEY) as Theme;
     if (storedTheme) {
       this.setTheme(storedTheme);
+    }else{
+        this.setTheme(Theme.System);
     }
   }
 

@@ -14,6 +14,7 @@ export class ThemeComponent {
   currentTheme: string='';
   constructor(public themeService: ThemeService) { 
     this.currentTheme=themeService.getTheme();
+    console.log(this.currentTheme);
   }
   
   changeTheme(theme: string){
