@@ -1,0 +1,17 @@
+<form #crudForm="ngForm" (ngSubmit)="onSubmit()">
+  <div>
+    <span>Date</span>
+    <input
+      id="meterInstallationDate"
+      [(ngModel)]="meterInstallationDate"
+      #meterInstallationDate="ngModel"
+      name="meterInstallationDate" type="date" required
+    />
+  </div>
+  <div>
+    <span>Name</span>
+    <input id="serviceName" name="serviceName" type="text" required
+    />
+  </div>
+  <button class="button-submit" [disabled]="crudForm.invalid || meterInstallationDate.pristine" type="submit">SAVE</button>
+</form>

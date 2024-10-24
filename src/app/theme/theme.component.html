@@ -1,0 +1,18 @@
+
+<div>
+    <h1 style="color: purple">theme works!</h1>
+    <div (click)="changeTheme('light')" style="height: 70px; width: 200px; background-color: yellow;">
+        <span>Light theme</span>
+        <input type="radio" id="light" name="radio-button" [checked]="currentTheme === Theme.Light"/>
+    </div>
+    <div (click)="changeTheme('dark')" style="height: 70px; width: 200px; background-color: yellow;">
+        <span>Dark theme</span>
+        <input type="radio" id="dark" name="radio-button" [checked]="currentTheme === Theme.Dark"/>
+    </div>
+    <div (click)="changeTheme('system')" style="height: 70px; width: 200px; background-color: yellow;">
+        <span>System theme</span>
+        <input type="radio" id="system" name="radio-button" [checked]="currentTheme === Theme.System"/>
+    </div>
+
+</div>
+
