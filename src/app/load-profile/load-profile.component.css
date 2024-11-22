@@ -34,3 +34,17 @@
 svg, img{
     padding:0;
 }
+
+.scrollable-content{
+    overflow-x: auto; /* Dodaje horizontalni skrol */
+    white-space: nowrap;
+    display: flex;
+}
+
+.table{ /* Ili neka širina veća od roditelja */
+  display: table;
+}
+
+.custom-div{
+    display: flex;
+}

@@ -13,4 +13,11 @@ import { CommonModule, DatePipe } from '@angular/common';
 export class LoadProfileComponent {
   data=data;
   columns=columns;
+  timeColumns = [
+    "12:30",
+    "13:00",
+    "13:30",
+    "14:00",
+    "14:30"
+  ];
 }

@@ -8,36 +8,40 @@
       <div>{{ service.serviceName }}</div>
       } }
     </div>
-    <div class="col-9 g-0 m-0 p-0 green">
+
+    <div class="col-9 g-0 m-0 p-0 green scrollable-content">
       <div class="table">
-        <tr class="none row p-0 m-0 g-0">n</tr>
-        <tr class="row-9 p-0 m-0 g-0">
-          <td *ngFor="let column of columns">
-            <span class="custom-with">{{ column.header }}</span>
-          </td>
+        <tr class="none row-9 p-0 m-0 g-0">
+          <td class="none">n</td>
         </tr>
-
-        @for(item of data; track item.time){ @for(service of item.services;
-        track service.serviceName){
-        <tr class="row-9 p-0 m-0 g-0">
-          <td>{{ service.kwh }}</td>
-          <td>{{ service.kva }}</td>
-          <td>{{ service.kvah }}</td>
-          <td>{{ service.kvarh }}</td>
-          <td>{{ service.avgVoltage }}</td>
-          <td>{{ service.avgCurrent }}</td>
-          @if(service.status){
-            <td>
-                <img src="/src/assets/on.svg"/>
+        <div class="custom" *ngFor="let time of timeColumns">
+          <tr>{{time}}</tr>
+          <tr class="row-9 p-0 m-0 g-0">
+            <td *ngFor="let column of columns">
+              <span class="custom-with">{{ column.header }}</span>
             </td>
-          }@else {
+          </tr>
+          @for(item of data; track item.time){ @for(service of item.services;
+          track service.serviceName){
+          <tr class="row-9 p-0 m-0 g-0">
+            <td>{{ service.kwh }}</td>
+            <td>{{ service.kva }}</td>
+            <td>{{ service.kvah }}</td>
+            <td>{{ service.kvarh }}</td>
+            <td>{{ service.avgVoltage }}</td>
+            <td>{{ service.avgCurrent }}</td>
+            @if(service.status){
             <td>
-                <img src="assets/out.svg"/>                    
+              <img src="on.svg" />
             </td>
-          }
-        </tr>
-
-        } }
+            }@else {
+            <td>
+              <img src="out.svg" />
+            </td>
+            }
+          </tr>
+          } }
+        </div>
       </div>
     </div>
   </div>
