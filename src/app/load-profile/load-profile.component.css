@@ -1,50 +1,57 @@
-.pink{
-    background-color: pink;
-}
+ .pink {
+     background-color: pink;
+ }
 
-.purple{
-    background-color: purple;
-}
+ .purple {
+     background-color: purple;
+ }
 
-.green{
-    background-color: greenyellow;
-}
+ .green {
+     background-color: greenyellow;
+ }
 
-.blue{
-    background-color: lightblue;
-}
+ .blue {
+     background-color: lightblue;
+     padding: 0;
+ }
 
-.none{
-    color: transparent;
-}
+ .none {
+     color: transparent;
+ }
 
-.table td{
-    border-top: none;
-    padding: 0;
-    margin:0;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    text-wrap: nowrap;
-}
+ .table td {
+     border-top: none;
+     padding: 0;
+     margin: 0;
+     padding-left: 1rem;
+     padding-right: 1rem;
+     text-wrap: nowrap;
+ }
 
-.custom-with{
-    width: 8rem;;
-}
+ .custom-with {
+     width: 8rem;
+     ;
+ }
 
-svg, img{
-    padding:0;
-}
+ svg,
+ img {
+     padding: 0;
+ }
 
-.scrollable-content{
-    overflow-x: auto; /* Dodaje horizontalni skrol */
-    white-space: nowrap;
-    display: flex;
-}
+ .scrollable-content {
+     overflow-x: auto;
+     white-space: nowrap;
+     max-width: 75%;
+ }
 
-.table{ /* Ili neka širina veća od roditelja */
-  display: table;
-}
+ .table {
+     display: flex;
+     margin: 0;
+ }
 
-.custom-div{
-    display: flex;
-}
+ .custom-tr {
+     display: flex;
+     flex-direction: row;
+     justify-content: center;
+
+ }

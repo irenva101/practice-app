@@ -1,47 +1,42 @@
 <div class="container-fluid g-0 p-0">
-  <div class="row g-0 p-0">
+  <div class="row g-0 p-0 m-0">
     <div class="col-3 g-0 m-0 blue">
-      <div class="row g-0 m-0">SERVICE NAME</div>
-      <div class="row g-0 m-0 none">nest</div>
+      <div class="row g-0 m-0 p-0">SERVICE NAME</div>
+      <div class="row g-0 m-0 p-0 none">nest</div>
       @for(item of data; track item.services){ @for(service of item.services;
       track service.serviceName){
       <div>{{ service.serviceName }}</div>
       } }
     </div>
 
-    <div class="col-9 g-0 m-0 p-0 green scrollable-content">
+    <div class=" green scrollable-content">
       <div class="table">
-        <tr class="none row-9 p-0 m-0 g-0">
-          <td class="none">n</td>
-        </tr>
-        <div class="custom" *ngFor="let time of timeColumns">
-          <tr>{{time}}</tr>
-          <tr class="row-9 p-0 m-0 g-0">
-            <td *ngFor="let column of columns">
-              <span class="custom-with">{{ column.header }}</span>
-            </td>
-          </tr>
-          @for(item of data; track item.time){ @for(service of item.services;
-          track service.serviceName){
-          <tr class="row-9 p-0 m-0 g-0">
-            <td>{{ service.kwh }}</td>
-            <td>{{ service.kva }}</td>
-            <td>{{ service.kvah }}</td>
-            <td>{{ service.kvarh }}</td>
-            <td>{{ service.avgVoltage }}</td>
-            <td>{{ service.avgCurrent }}</td>
-            @if(service.status){
-            <td>
-              <img src="on.svg" />
-            </td>
-            }@else {
-            <td>
-              <img src="out.svg" />
-            </td>
-            }
-          </tr>
-          } }
-        </div>
+        <div *ngFor="let time of timeColumns">
+            <tr class="custom-tr">
+              {{
+                time
+              }}
+            </tr>
+            <tr>
+              <td *ngFor="let column of columns">
+                <span class="custom-with">{{ column.header }}</span>
+              </td>
+            </tr>
+            @for(item of data; track item.time){ @for(service of item.services;
+            track service.serviceName){
+            <tr>
+              <td>{{ service.kwh }}</td>
+              <td>{{ service.kva }}</td>
+              <td>{{ service.kvah }}</td>
+              <td>{{ service.kvarh }}</td>
+              <td>{{ service.avgVoltage }}</td>
+              <td>{{ service.avgCurrent }}</td>
+              @if(service.status){
+              <td><img src="on.svg" /></td>}@else {
+              <td><img src="out.svg" /></td>}
+            </tr>
+            } }
+          </div>
       </div>
     </div>
   </div>
