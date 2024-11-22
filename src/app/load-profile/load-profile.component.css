@@ -1,0 +1,36 @@
+.pink{
+    background-color: pink;
+}
+
+.purple{
+    background-color: purple;
+}
+
+.green{
+    background-color: greenyellow;
+}
+
+.blue{
+    background-color: lightblue;
+}
+
+.none{
+    color: transparent;
+}
+
+.table td{
+    border-top: none;
+    padding: 0;
+    margin:0;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-wrap: nowrap;
+}
+
+.custom-with{
+    width: 8rem;;
+}
+
+svg, img{
+    padding:0;
+}

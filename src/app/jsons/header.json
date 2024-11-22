@@ -1,0 +1,9 @@
+[
+  { "header": "KWH" },
+  { "header": "KVA" },
+  { "header": "KVAH" },
+  { "header": "KVARH" },
+  { "header": "AVG.VOLTAGE" },
+  { "header": "AVG.CURRENT" },
+  { "header": "STATUS" }
+]
