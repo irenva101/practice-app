@@ -1,43 +1,77 @@
-<div class="container-fluid g-0 p-0">
-  <div class="row g-0 p-0 m-0">
-    <div class="col-3 g-0 m-0 blue">
-      <div class="row g-0 m-0 p-0">SERVICE NAME</div>
-      <div class="row g-0 m-0 p-0 none">nest</div>
-      @for(item of data; track item.services){ @for(service of item.services;
-      track service.serviceName){
-      <div>{{ service.serviceName }}</div>
-      } }
-    </div>
+<div class="container-fluid p-0">
 
-    <div class=" green scrollable-content">
-      <div class="table">
-        <div *ngFor="let time of timeColumns">
-            <tr class="custom-tr">
-              {{
-                time
-              }}
-            </tr>
-            <tr>
-              <td *ngFor="let column of columns">
-                <span class="custom-with">{{ column.header }}</span>
-              </td>
-            </tr>
-            @for(item of data; track item.time){ @for(service of item.services;
-            track service.serviceName){
-            <tr>
-              <td>{{ service.kwh }}</td>
-              <td>{{ service.kva }}</td>
-              <td>{{ service.kvah }}</td>
-              <td>{{ service.kvarh }}</td>
-              <td>{{ service.avgVoltage }}</td>
-              <td>{{ service.avgCurrent }}</td>
-              @if(service.status){
-              <td><img src="on.svg" /></td>}@else {
-              <td><img src="out.svg" /></td>}
-            </tr>
-            } }
-          </div>
-      </div>
-    </div>
+  <div class="table-container mt-5 ">
+      <table>
+          <thead>
+              <tr>
+                  <th rowspan="1" class="table-name-number">SERVICE NAME</th>
+                  <th rowspan="1" class="table-name-number border-table">METER NUMBER</th>
+                  <th class="border-table" colspan="6" *ngFor="let value of data![0]?.values"> {{ value.time 
+                      }} </th>
+              </tr>
+              <tr class="table-header">
+                  <th rowspan="1" class="table-name-number"></th>
+                  <th rowspan="1" class="table-name-number border-table"></th> 
+                  <ng-container *ngFor="let value of data![0]?.values">
+                      <th class="table-background">KWH</th>
+                      <th class="table-background">KVA</th>
+                      <th class="table-background">KVAH</th>
+                      <th class="table-background">KVARH</th>
+                      <th class="table-background">PHASE VOLTAGE</th>
+                      <th class="table-background border-table">PHASE CURRENT</th>
+                  </ng-container>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let item of data">
+                  <td class="table-name-number">{{ item.serviceName }}</td>
+                  <td class="table-name-number border-table">{{ item.meterNumber }}</td>
+                  <ng-container *ngFor="let value of item.values">
+                      <td>
+                          <img src="im.svg" />
+                          <span>{{ value.activeEnergyImport }}</span>
+                          <img src="ex.svg" />
+                          <span>{{ value.activeEnergyExport }}</span>
+                      </td>
+                      <td>
+                          <img src="im.svg" />
+                          <span>{{ value.apparentPowerImport }}</span>
+                          <img src="ex.svg" />
+                          <span>{{ value.apparentPowerExport }}</span>
+                      </td>
+                      <td>
+                          <img src="im.svg" />
+                          <span>{{ value.apparentEnergyImport }}</span>
+                          <img src="ex.svg" />
+                          <span>{{ value.apparentEnergyExport }}</span>
+                      </td>
+                      <td>
+                          <img src="im.svg" />
+                          <span>{{value.reactiveEnergyImport}}</span>
+                          <img src="ex.svg" />
+                          <span>{{value.reactiveEnergyExport}}</span>
+                      </td>
+                      <td>
+                          <img src="l1.svg" />
+                          <span>{{ value.avgVoltagePhase1}}</span>
+                          <img src="l2.svg" />
+                          <span>{{ value.avgVoltagePhase2}}</span>
+                          <img src="l3.svg" />
+                          <span>{{ value.avgVoltagePhase3}}</span>
+                      </td>
+                      <td class="border-table">
+                          <img src="l1.svg" />
+                          <span>{{ value.avgCurrentPhase1}}</span>
+                          <img src="l2.svg" />
+                          <span>{{ value.avgCurrentPhase2}}</span>
+                          <img src="l3.svg" />
+                          <span>{{ value.avgCurrentPhase3}}</span>
+                      </td>
+                  </ng-container>
+              </tr>
+          </tbody>
+      </table>
   </div>
+
+  
 </div>

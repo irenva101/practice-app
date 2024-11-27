@@ -1,0 +1,46 @@
+@import 'bootstrap/scss/bootstrap';
+/* You can add global styles to this file, and also import other style files */
+
+:root{
+    
+  
+    //theme
+    --background-color-overlay: rgb(28, 28, 28, 0.9);
+    --background-color: #1C1C1C;
+    --text-color: #A0A0A0;
+    --border-bottom: 1px solid #282828;
+    --user-role: #343434;
+    --menu-item-hover: #343434;
+    --menu-item-selected: #e8e8e8;
+    --menu-item-colapsed-selected: invert(99%) sepia(4%) saturate(7%) hue-rotate(326deg) brightness(114%) contrast(82%);
+    --page-title: #e8e8e8e8;
+    --page-subtitle: #8d8d8d;
+    --table-tr: #222222;
+    --table-td: #a0a0a0;
+    --table-tr-text: #7e7e7e;
+    --svg-border: #282828;
+    --checked-border: 1px solid #E3E3E3;
+  
+    --form-field: #282828;
+    --form-field-border: 1px solid #3b3b3b;
+    --form-field-selected: #1C1C1C;
+    --checkmark-border: 1px solid #282828;
+    --sub-sidemenu: #171717;
+    --horizontal-line: 1px solid #343434;
+    --validation-instruction: #585858;
+    --dirty-touched-color: #e8e8e8;
+    --check-svg: invert(5%) sepia(6%) saturate(248%) hue-rotate(314deg) brightness(91%) contrast(80%);
+  
+    --popup-background: #282828;
+    --exit: invert(95%) sepia(0%) saturate(530%) hue-rotate(213deg) brightness(112%) contrast(82%);
+    --neutral-button: #3A3A3A;
+    --exit-toastr: brightness(0) saturate(100%) invert(100%);
+    --exit-toastr-dark: brightness(10%) saturate(0%) invert(0%);
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color) !important;
+    height: 100% !important;
+    display: block;
+  }

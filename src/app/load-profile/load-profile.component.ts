@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import data from '../jsons/data.json';
 import columns from '../jsons/header.json';
 import { CommonModule, DatePipe } from '@angular/common';
@@ -8,16 +8,31 @@ import { CommonModule, DatePipe } from '@angular/common';
   standalone: true,
   imports: [CommonModule, DatePipe],
   templateUrl: './load-profile.component.html',
-  styleUrl: './load-profile.component.css'
+  styleUrl: './load-profile.component.scss'
 })
-export class LoadProfileComponent {
+export class LoadProfileComponent implements OnInit{
   data=data;
-  columns=columns;
-  timeColumns = [
-    "12:30",
-    "13:00",
-    "13:30",
-    "14:00",
-    "14:30"
-  ];
+
+
+  ngOnInit(): void {
+    const tableContainer = document.querySelector(
+      '.table-container',
+    ) as HTMLElement;
+    if (tableContainer) {
+      tableContainer.addEventListener('wheel', (event: WheelEvent) => {
+        if (event.deltaY > 0) {
+          tableContainer.scrollLeft += 100;
+        } else {
+          tableContainer.scrollLeft -= 100;
+        }
+        event.preventDefault();
+      });
+    }
+
+    this.getData(); 
+  }
+
+  getData(){
+    this.data=data;
+  }
 }
