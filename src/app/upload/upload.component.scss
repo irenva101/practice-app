@@ -66,7 +66,7 @@ table {
     //background-color: var(--table-tr);
     color: var(--table-tr-text);
     border-top: var(--border-bottom);
-    table-layout: fixed;
+    table-layout: auto;
 
     td {
         height: 44px;
@@ -86,9 +86,10 @@ table {
 
     }
 
-    td:first-child{
-        width: 50px;
-    }
+    // td:first-child{
+    //     width: 50px;
+    // }
+
 
     td:hover .text-wrapper.animate-text {
         animation: slideText 9s linear infinite;
