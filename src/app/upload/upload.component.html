@@ -1,7 +1,7 @@
 <div class="container-fluid m-0 border-style">
     <div
         class="row g-0 m-0 p-2 m-5 mt-4 mb-4 rounded upload-section pt-5 
-        pb-5 align-items-center dropzone appDragAndDrop"
+        pb-5 align-items-center  appDragAndDrop"
         (click)="onFileSelected($event)"
       >
         <input type="file" (change)="onFileSelected($event)" />
@@ -12,6 +12,78 @@
         <span class="d-flex justify-content-center">
           Drag and drop
         </span>
+      </div>
+      <div class="row g-0 m-0 m-5 mt-0 rounded table-section pb-3">
+        <table>
+          <thead>
+            <tr>
+              <td></td>
+              <td>
+                <img src="upload-arrow.svg" alt="User Icon" />
+                <span>UPLOAD ID</span>
+              </td>
+              <td>
+                <img src="upload-arrow.svg" alt="User Icon" />
+                <span>DATE</span>
+              </td>
+              <td>
+                <img src="upload-arrow.svg" alt="User Icon" />
+                <span>STATUS</span>
+              </td>
+              <td></td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let row of data">
+              <td></td>
+              <td>{{ row.path }}</td>
+              <td>{{ row.dateTime | date: "dd MMM yyyy HH:mm" }}</td>
+              <td>
+                <span class="">{{ row.status }}</span>
+              </td>
+              <td
+                class="d-flex justify-content-end align-items-center custom-padding"
+                (click)="moreIconClicked()"
+              >
+                <img
+                  class="more-icon"
+                  src="more-icon.svg"
+                />
+              </td>
+              @if (isMoreIconClicked) {
+                <div class="overlay-light" (click)="moreIconClicked()"></div>
+                <div class="dropdown-button">
+                  <div class="dropdown-button-menu p-0 m-0">
+                    <div
+                      class="dropdown-button-item border-bottom p-2 d-flex justify-content-between"
+                      (click)="downloadReport(row.id!)"
+                    >
+                      <span class="pe-2">Download report</span>
+                      <img src="assets/core/table/download.svg"/>
+                    </div>
+                    <div
+                      class="dropdown-button-item border-bottom p-2 d-flex justify-content-between"
+                      (click)="processFile(row.id!)"
+                    >
+                      <span>Process file</span>
+                      <img src="assets/settings/process.svg"/>
+                    </div>
+                    <div
+                      class="dropdown-button-item p-2 d-flex justify-content-between"
+                      (click)="downloadFile(row.id!)"
+                    >
+                      <span>Download file</span>
+                      <img src="assets/core/table/download.svg"/>
+                    </div>
+                  </div>
+                </div>
+              }
+            </tr>
+          </tbody>
+        </table>
+        <div class="container-down">
+          <p>paginacija brale</p>
+        </div>
       </div>
 </div>
   

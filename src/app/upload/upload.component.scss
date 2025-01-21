@@ -4,6 +4,17 @@
     font-weight: 500;
     cursor: pointer;
     color: var(--text-color);
+    position: relative
+    margin 0;
+
+    input{
+        opacity: 0;
+        position: absolute;
+        z-index: 2;
+        width: 100%;
+        height: 9rem;
+        left:0;
+    }
 }
 
 .dropzone{
@@ -20,4 +31,112 @@
         left:0;
     }
 }
+
+.overlay-light {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color:transparent;
+    z-index: 3;
+}
+
+.dropdown-button {
+    position: absolute;
+    right: 0;
+    background: var(--background-color);
+    border: var(--border-bottom);
+    margin-right: 1rem;
+    z-index: 4;
+
+    .dropdown-button-item {
+        cursor: pointer;
+    }
+
+    .dropdown-button-item:hover {
+        background-color: var(--menu-item-hover);
+    }
+}
+
+
+//table
+table {
+    width: 100%;
+    //background-color: var(--table-tr);
+    color: var(--table-tr-text);
+    border-top: var(--border-bottom);
+    table-layout: fixed;
+
+    td {
+        height: 44px;
+        font-weight: 500;
+        cursor: pointer;
+        border-top: var(--border-bottom);
+        box-sizing: border-box;
+        text-wrap: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        img {
+            align-items: center;
+            padding-right: 5px;
+            padding-bottom: 3px;
+        }
+
+    }
+
+    td:first-child{
+        width: 50px;
+    }
+
+    td:hover .text-wrapper.animate-text {
+        animation: slideText 9s linear infinite;
+        background-image: linear-gradient(to left, transparent);
+        cursor: pointer;
+    }
+
+    thead {
+        font-size: 14px;
+        font-weight: 500;
+
+    }
+
+    tbody {
+        //background-color: var(--background-color);
+        color: var(--table-td);
+
+    }
+
+    tbody tr:hover {
+        background-color: rgb(238, 238, 238);
+        cursor: pointer;
+    }
+}
+
+//status file
+.label-box {
+    color: var(--text);
+    border-radius: 10px;
+    font-weight: 500;
+    padding: 0.1rem 0.5rem 0.1rem 0.5rem;
+
+    &.not-processed {
+        background-color: var(--not-processed);
+    }
+
+    &.processing {
+        background-color: var(--processing);
+    }
+
+    &.processed {
+        background-color: var(--processed);
+    }
+
+    &.failed {
+        background-color: var(--failed);
+    }
+}
+
+
 
