@@ -1,0 +1,17 @@
+<div class="container-fluid m-0 border-style">
+    <div
+        class="row g-0 m-0 p-2 m-5 mt-4 mb-4 rounded upload-section pt-5 
+        pb-5 align-items-center dropzone appDragAndDrop"
+        (click)="onFileSelected($event)"
+      >
+        <input type="file" (change)="onFileSelected($event)" />
+        <img
+          class="d-flex justify-content-center"
+          src="upload-arrow.svg" width="20" height="20"
+        />
+        <span class="d-flex justify-content-center">
+          Drag and drop
+        </span>
+      </div>
+</div>
+  

@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { FormComponent } from "./form/form.component";
-import { ThemeComponent } from "./theme/theme.component";
-import { LoadProfileComponent } from './load-profile/load-profile.component';
+
+import { UploadComponent } from './upload/upload.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, LoadProfileComponent],
+  imports: [RouterOutlet, UploadComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
